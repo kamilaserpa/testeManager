@@ -22,4 +22,21 @@ public class PaisService {
 		return paisRepository.findAll();
 	}
 
+	public List<Pais> pesquisarNome(String nome) {
+		return paisRepository.pesquisarNome(nome);
+	}
+
+	public Pais getOne(Long id) {
+		return paisRepository.getOne(id);
+	}
+
+	public boolean delete(Long id) {
+		try {
+			paisRepository.deleteById(id);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
 }

@@ -32,7 +32,7 @@ public class TesteApplication {
 			usuarioService.save(new Usuario("admin", "suporte", "Gestor", true));
 			paisService.save(new Pais("Brasil", "BR", "Brasileiro"));
 			paisService.save(new Pais("Argentina", "AR", "Argentino"));
-			paisService.save(new Pais("Alemmanha", "AL", "Alemão"));
+			paisService.save(new Pais("Alemanha", "AL", "Alemão"));
 		};
 	}
 
