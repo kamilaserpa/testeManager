@@ -1,4 +1,4 @@
-package model;
+package br.com.kamila.Teste.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,9 +15,44 @@ public class Pais {
 	
 	@Column
 	private String nome;
+	
 	@Column
 	private String sigla;
+	
 	@Column
 	private String gentilico;
+	
+	public Pais() {};
+	
+	public Pais(String nome, String sigla, String gentilico) {
+		this.nome = nome;
+		this.sigla = sigla;
+		this.gentilico = gentilico;
+	}
+	
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public String getSigla() {
+		return sigla;
+	}
+	public void setSigla(String sigla) {
+		this.sigla = sigla;
+	}
+	public String getGentilico() {
+		return gentilico;
+	}
+	public void setGentilico(String gentilico) {
+		this.gentilico = gentilico;
+	}
 
 }
