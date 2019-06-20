@@ -1,4 +1,4 @@
-package model;
+package br.com.kamila.Teste.model;
 
 public class UsuarioAutenticado {
 	
@@ -7,5 +7,38 @@ public class UsuarioAutenticado {
 	private String token;
 	private boolean administrador;
 	private boolean autenticado;
+	
+	public String getLogin() {
+		return login;
+	}
+	public void setLogin(String login) {
+		this.login = login;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public String getToken() {
+		return token;
+	}
+	public void setToken(String token) {
+		this.token = token;
+	}
+	public boolean isAdministrador() {
+		return administrador;
+	}
+	public void setAdministrador(boolean administrador) {
+		this.administrador = administrador;
+	}
+	public boolean isAutenticado() {
+		return autenticado;
+	}
+	public void setAutenticado(boolean autenticado) {
+		this.autenticado = autenticado;
+	}
+	
+	
 
 }
