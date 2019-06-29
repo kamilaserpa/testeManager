@@ -1,4 +1,4 @@
-# Manager System - teste back-end
+# Teste back-end - API REST com Spring
 
 ## Por Kamila Serpa
 
@@ -15,6 +15,10 @@ A documentação do projeto está realizada em Swagger e pode ser vizualizada at
 
 Esta aplicação utiliza um banco de dados local que pode ser acessado pelo navegador através da url:
 [http://localhost:8080/h2](http://localhost:8080/h2)
+
+### Run
+
+Importar como projeto Maven. Baixar e atualizar dependências. Run classe principal como Java Application.
 
 ### Developer
 Kamila Rodrigues Serpa

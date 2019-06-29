@@ -27,12 +27,15 @@ public class TesteApplication {
 	
 	@Bean
 	CommandLineRunner runner () {
-		return args -> {			
-			usuarioService.save(new Usuario("convidado", "manager", "Usuario convidado", false));
-			usuarioService.save(new Usuario("admin", "suporte", "Gestor", true));
-			paisService.save(new Pais("Brasil", "BR", "Brasileiro"));
-			paisService.save(new Pais("Argentina", "AR", "Argentino"));
-			paisService.save(new Pais("Alemanha", "AL", "Alemão"));
+		return args -> {
+			if(usuarioService.findAll().size() == (int)0) {
+				usuarioService.save(new Usuario("convidado", "manager", "Usuario convidado", false));
+				usuarioService.save(new Usuario("admin", "suporte", "Gestor", true));
+				paisService.save(new Pais("Brasil", "BR", "Brasileiro"));
+				paisService.save(new Pais("Argentina", "AR", "Argentino"));
+				paisService.save(new Pais("Alemanha", "AL", "Alemão"));
+			}
+			
 		};
 	}
 

@@ -5,9 +5,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import br.com.kamila.Teste.model.Usuario;
 import br.com.kamila.Teste.model.UsuarioAutenticado;
@@ -28,12 +28,12 @@ public class UsuarioController {
 	private TokenUtil tokenUtil;
 
 	@RequestMapping(value = "autenticar", method = RequestMethod.POST)
-	public ResponseEntity<UsuarioAutenticado> autenticar(@RequestBody Usuario usuario) {
+	public ResponseEntity<UsuarioAutenticado> autenticar(@RequestParam String login, @RequestParam String senha) {
 		try {
-			Usuario u = usuarioService.getByLogin(usuario.getLogin());
+			Usuario u = usuarioService.getByLogin(login);
 			UsuarioAutenticado ua = new UsuarioAutenticado();
 
-			if (u.getSenha().equals(usuario.getSenha())) {
+			if (u.getSenha().equals(senha)) {
 				ua.setToken(tokenUtil.gerarToken(u));
 				ua.setAutenticado(true);
 				ua.setAdministrador(u.isAdministrador());
@@ -50,8 +50,8 @@ public class UsuarioController {
 	}
 
 	@ApiOperation(value = "Renova o token por mais 5 minutos")
-	@RequestMapping(value = "renovar-ticket/{token}", method = RequestMethod.GET)
-	public ResponseEntity<Boolean> renovaToken(@PathVariable String token) {
+	@RequestMapping(value = "renovar-ticket", method = RequestMethod.GET)
+	public ResponseEntity<Boolean> renovaToken(@RequestParam String token) {
 		try {
 
 			if (tokenUtil.renova(token)) {
