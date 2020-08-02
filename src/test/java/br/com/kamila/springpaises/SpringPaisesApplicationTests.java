@@ -1,4 +1,4 @@
-package br.com.kamila.Teste;
+package br.com.kamila.springpaises;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class TesteApplicationTests {
+public class SpringPaisesApplicationTests {
 
 	@Test
 	public void contextLoads() {

@@ -1,27 +1,31 @@
-package br.com.kamila.Teste.model;
+package br.com.kamila.springpaises.model;
+
+import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-import io.swagger.annotations.Api;
+import javax.persistence.Table;
 
 @Entity
-public class Pais {
+@Table(name="TB_PAIS")
+public class Pais implements Serializable {
 	
+	private static final long serialVersionUID = 6572874875868262909L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column
+	@Column(name = "nome")
 	private String nome;
 	
-	@Column
+	@Column(name = "sigla")
 	private String sigla;
 	
-	@Column
+	@Column(name = "gentilico")
 	private String gentilico;
 	
 	public Pais() {};

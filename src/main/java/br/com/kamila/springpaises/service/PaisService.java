@@ -1,12 +1,12 @@
-package br.com.kamila.Teste.service;
+package br.com.kamila.springpaises.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.kamila.Teste.model.Pais;
-import br.com.kamila.Teste.repository.PaisRepository;
+import br.com.kamila.springpaises.model.Pais;
+import br.com.kamila.springpaises.repository.PaisRepository;
 
 @Service
 public class PaisService {

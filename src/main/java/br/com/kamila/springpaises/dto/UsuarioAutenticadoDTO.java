@@ -1,6 +1,6 @@
-package br.com.kamila.Teste.model;
+package br.com.kamila.springpaises.dto;
 
-public class UsuarioAutenticado {
+public class UsuarioAutenticadoDTO {
 	
 	private String login;
 	private String nome;

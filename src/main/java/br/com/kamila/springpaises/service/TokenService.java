@@ -1,10 +1,10 @@
-package br.com.kamila.Teste.service;
+package br.com.kamila.springpaises.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.kamila.Teste.model.Token;
-import br.com.kamila.Teste.repository.TokenRepository;
+import br.com.kamila.springpaises.model.Token;
+import br.com.kamila.springpaises.repository.TokenRepository;
 
 @Service
 public class TokenService {
@@ -16,7 +16,7 @@ public class TokenService {
 		return tokenRepository.save(token);
 	}
 
-	public Token getByToken(String token) {
-		return tokenRepository.getByToken(token);
+	public Token getByCdToken(String token) {
+		return tokenRepository.getByCdToken(token);
 	}
 }

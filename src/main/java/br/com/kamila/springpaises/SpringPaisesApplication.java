@@ -1,4 +1,4 @@
-package br.com.kamila.Teste;
+package br.com.kamila.springpaises;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -6,14 +6,14 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import br.com.kamila.Teste.model.Pais;
-import br.com.kamila.Teste.model.Usuario;
-import br.com.kamila.Teste.service.PaisService;
-import br.com.kamila.Teste.service.UsuarioService;
+import br.com.kamila.springpaises.model.Pais;
+import br.com.kamila.springpaises.model.Usuario;
+import br.com.kamila.springpaises.service.PaisService;
+import br.com.kamila.springpaises.service.UsuarioService;
 
 
 @SpringBootApplication
-public class TesteApplication {
+public class SpringPaisesApplication {
 
 	@Autowired
 	private UsuarioService usuarioService;
@@ -22,7 +22,7 @@ public class TesteApplication {
 	private PaisService paisService;
 	
 	public static void main(String[] args) {
-		SpringApplication.run(TesteApplication.class, args);
+		SpringApplication.run(SpringPaisesApplication.class, args);
 	}
 	
 	@Bean

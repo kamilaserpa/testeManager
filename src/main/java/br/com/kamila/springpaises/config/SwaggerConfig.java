@@ -1,10 +1,11 @@
-package br.com.kamila.Teste.config;
+package br.com.kamila.springpaises.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
+import springfox.documentation.service.Contact;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
@@ -20,19 +21,20 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
   public Docket greetingApi() {
     return new Docket(DocumentationType.SWAGGER_2)
         .select()
-        .apis(RequestHandlerSelectors.basePackage("br.com.kamila.Teste"))
+        .apis(RequestHandlerSelectors.basePackage("br.com.kamila.springpaises"))
         .build()
-        .apiInfo(metaData());
+        .apiInfo(apiInfo());
 
   }
 
-  private ApiInfo metaData() {
+  private ApiInfo apiInfo() {
     return new ApiInfoBuilder()
-        .title("Spring Boot REST API")
-        .description("Documentação do projeto back-end para teste de Kamila Serpa.")
+        .title("API Países")
+        .description("Projeto Spring Boot utilizando padrão REST por Kamila Serpa.")
         .version("1.0.0")
         .license("Apache License Version 2.0")
         .licenseUrl("https://www.apache.org/licenses/LICENSE-2.0\"")
+        .contact(contact)
         .build();
   }
 
@@ -44,4 +46,10 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
     registry.addResourceHandler("/webjars/**")
         .addResourceLocations("classpath:/META-INF/resources/webjars/");
   }
+  
+  Contact contact = new Contact(
+			"Kamila Serpa",
+			"https://kamilaserpa.github.io",
+			"kamilardg@gmail.com");
+  
 }

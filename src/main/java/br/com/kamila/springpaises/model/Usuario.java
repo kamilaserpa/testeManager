@@ -1,4 +1,4 @@
-package br.com.kamila.Teste.model;
+package br.com.kamila.springpaises.model;
 
 import java.io.Serializable;
 
@@ -7,35 +7,37 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-public class Usuario implements Serializable{
+@Table(name="tb_usuario")
+public class Usuario implements Serializable {
 
-	private static final long serialVersionUID = 1L;
-	
+	private static final long serialVersionUID = 2363469770779765090L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column
+	@Column(name = "login")
 	private String login;
 	
-	@Column
+	@Column(name = "senha")
 	private String senha;
 
-	@Column
+	@Column(name = "nome")
 	private String nome;
 
-	@Column
-	private boolean administrador;
+	@Column(name = "is_administrador")
+	private boolean isAdministrador;
 
 	public Usuario() {};
 	
-	public Usuario(String login, String senha, String nome, boolean administrador) {
+	public Usuario(String login, String senha, String nome, boolean isAdministrador) {
 		this.login = login;
 		this.senha = senha;
 		this.nome = nome;
-		this.administrador = administrador;
+		this.isAdministrador = isAdministrador;
 	}
 
 	public Long getId() {
@@ -71,11 +73,11 @@ public class Usuario implements Serializable{
 	}
 
 	public boolean isAdministrador() {
-		return administrador;
+		return isAdministrador;
 	}
 
-	public void setAdministrador(boolean administrador) {
-		this.administrador = administrador;
+	public void setAdministrador(boolean isAdministrador) {
+		this.isAdministrador = isAdministrador;
 	}
 	
 }

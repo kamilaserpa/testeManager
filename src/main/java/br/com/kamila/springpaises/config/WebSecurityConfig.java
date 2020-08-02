@@ -1,4 +1,4 @@
-package br.com.kamila.Teste;
+package br.com.kamila.springpaises.config;
 
 import java.util.Arrays;
 
